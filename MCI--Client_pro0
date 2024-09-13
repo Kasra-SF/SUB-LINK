@@ -1,0 +1,354 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.3",
+        "188.114.96.3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "0.0.0.0",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "WARP § 0",
+        "WARP § 1",
+        "WARP § 2",
+        "WARP § 3",
+        "WARP § 4",
+        "WARP § 5",
+        "WARP § 6",
+        "WARP § 7",
+        "WARP § 8"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "WARP § 0",
+        "WARP § 1",
+        "WARP § 2",
+        "WARP § 3",
+        "WARP § 4",
+        "WARP § 5",
+        "WARP § 6",
+        "WARP § 7",
+        "WARP § 8"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 0",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8f4b:5cb5:70ed:6c71:faef/128"
+      ],
+      "private_key": "2NyXlrqEcmZTeYSSv8dpHg2d3v7fCwXw5n/um12pnns=",
+      "server": "2606:4700:d1::fc68:4439:b17d:54f4",
+      "server_port": 7152,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "0Gqa",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 1",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8ba6:e06d:4b05:4ac9:1c3c/128"
+      ],
+      "private_key": "6PycRNv3bgDv++AAdiNrCK76DFNTWPzNdwdYqiNdFVc=",
+      "server": "2606:4700:d1::f031:d117:305b:3ab7",
+      "server_port": 878,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "kKgs",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 2",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8b82:d16:2c50:ebff:5592/128"
+      ],
+      "private_key": "eHrKibYWHFEMHDz25X7GXxrI1Vh08XN0cCZI8LDxEm4=",
+      "server": "2606:4700:d1::28c4:fad0:bcce:b576",
+      "server_port": 8854,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "1yUT",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 3",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:85a1:2768:3a54:6195:fbed/128"
+      ],
+      "private_key": "GPvWNbNI21/f+i9Zt5kmt7ee6nYScH0dT0mn8CC6Jk0=",
+      "server": "2606:4700:d0::1af8:2d95:ca26:a61f",
+      "server_port": 4500,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "IaAu",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 4",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:88e7:6aa0:a3f9:f44b:76f2/128"
+      ],
+      "private_key": "GKNpb6zz2aMQLdKDTnlMPA7hQbgVW7X9DS0R5L6OLHw=",
+      "server": "2606:4700:d0::9944:f131:290a:e743",
+      "server_port": 4500,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "HC8n",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 5",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8544:934:2d0d:a99:1988/128"
+      ],
+      "private_key": "IOSMV/Lcr/9xEgfakwsfTv9lvGxp2JPSngXPHYFlw3A=",
+      "server": "2606:4700:d0::47d5:7914:cb45:dfee",
+      "server_port": 859,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "p3uK",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 6",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8c7c:327b:622d:8ba9:63b3/128"
+      ],
+      "private_key": "+OMqP9NsRFN2hzMXiIPLLk3U24cM26/3w4TU/ZzQ/W8=",
+      "server": "2606:4700:d0::47d5:7914:cb45:dfee",
+      "server_port": 1014,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "Hm7b",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 7",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:88b3:eff5:4d84:de27:dc8a/128"
+      ],
+      "private_key": "COxfyCZIExLauPzDkfYAl0NB/Wc78HwWXhWlEDquD0A=",
+      "server": "2606:4700:d1::5d6a:18e7:19f2:7631",
+      "server_port": 934,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "ZSMu",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "WARP § 8",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:819c:9a37:6a44:ac:599c/128"
+      ],
+      "private_key": "GCjhTKeY4GzIpaij0jFPBYxW/lPUjwvDZjZM5boRjFk=",
+      "server": "2606:4700:d1::61f3:6b60:1c42:4500",
+      "server_port": 8742,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "rAyc",
+      "mtu": 1330,
+      "fake_packets": "1-5",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "DIsdSMhh1DkTwgCM"
+    }
+  }
+}
