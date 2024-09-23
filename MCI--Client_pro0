@@ -42,12 +42,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "104.21.69.44",
-        "172.67.204.84",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
+        "188.114.98.0",
+        "188.114.99.0",
         "104.17.148.22",
         "104.17.147.22",
-        "172.67.214.246",
-        "104.21.83.62"
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "188.114.96.6",
+        "188.114.97.6"
       ]
     },
     "independent_cache": true
@@ -58,14 +62,12 @@
       "tag": "tun-in",
       "mtu": 9000,
       "inet4_address": "172.19.0.1/28",
-      "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true,
       "stack": "mixed",
       "sniff": true,
-      "sniff_override_destination": true,
-      "domain_strategy": "prefer_ipv6"
+      "sniff_override_destination": true
     },
     {
       "type": "mixed",
@@ -73,8 +75,7 @@
       "listen": "127.0.0.1",
       "listen_port": 2334,
       "sniff": true,
-      "sniff_override_destination": true,
-      "domain_strategy": "prefer_ipv6"
+      "sniff_override_destination": true
     },
     {
       "type": "direct",
@@ -89,12 +90,12 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "1-t.me/client_pro0 § 0",
-        "2-t.me/client_pro0 § 1",
-        "3-t.me/client_pro0 § 2",
-        "4-t.me/client_pro0 § 3",
-        "5-t.me/client_pro0 § 4",
-        "6-t.me/client_pro0 § 5"
+        "1-t.me\\client_pro0 § 0",
+        "2-t.me\\client_pro0 § 1",
+        "3-t.me\\client_pro0 § 2",
+        "4-t.me\\client_pro0 § 3",
+        "5-t.me\\client_pro0 § 4",
+        "6-t.me\\client_pro0 § 5"
       ],
       "default": "auto"
     },
@@ -102,12 +103,12 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "1-t.me/client_pro0 § 0",
-        "2-t.me/client_pro0 § 1",
-        "3-t.me/client_pro0 § 2",
-        "4-t.me/client_pro0 § 3",
-        "5-t.me/client_pro0 § 4",
-        "6-t.me/client_pro0 § 5"
+        "1-t.me\\client_pro0 § 0",
+        "2-t.me\\client_pro0 § 1",
+        "3-t.me\\client_pro0 § 2",
+        "4-t.me\\client_pro0 § 3",
+        "5-t.me\\client_pro0 § 4",
+        "6-t.me\\client_pro0 § 5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -115,16 +116,16 @@
     },
     {
       "type": "wireguard",
-      "tag": "1-t.me/client_pro0 § 0",
+      "tag": "1-t.me\\client_pro0 § 0",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8e63:78a8:b1a0:2590:40a5/128"
+        "2606:4700:110:8172:63d0:b12a:964c:1715/128"
       ],
-      "private_key": "2O1OJc5pNkQ8pd6uCHVYMEzC9u5Kq3l90SBzdiD8jGg=",
-      "server": "2606:4700:d1::b2c1:aadc:7065:5f65",
-      "server_port": 946,
+      "private_key": "UD4+cjxz8GcZSz7JNHHChe8kRUKIpPejNWyIbCXjdUM=",
+      "server": "2606:4700:d0::5040:d99f:ac25:8472",
+      "server_port": 7559,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "amos",
+      "reserved": "bdf6",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -132,16 +133,16 @@
     },
     {
       "type": "wireguard",
-      "tag": "2-t.me/client_pro0 § 1",
+      "tag": "2-t.me\\client_pro0 § 1",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:85b6:d9d9:ac4e:961a:1d51/128"
+        "2606:4700:110:8686:3c3:2b97:79b:fca7/128"
       ],
-      "private_key": "YJvPh7KdFOHcF+lq8SwAEXUk4QfKMRfTK5EDsi5ctk0=",
-      "server": "2606:4700:d0::21f1:93bc:54ff:7ab6",
-      "server_port": 1701,
+      "private_key": "sOB7O/QuzqD9UlfcYDlzCcoC56ET1ijaWuX56FGQMF4=",
+      "server": "2606:4700:d0::1801:1508:10ec:148",
+      "server_port": 891,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Q4ty",
+      "reserved": "OZcS",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -149,16 +150,16 @@
     },
     {
       "type": "wireguard",
-      "tag": "3-t.me/client_pro0 § 2",
+      "tag": "3-t.me\\client_pro0 § 2",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:82a9:c08d:a7af:7dca:7c3f/128"
+        "2606:4700:110:8d84:6a8:75f1:5f5e:58c3/128"
       ],
-      "private_key": "6NPGc1yuKO1H8HKeNYiyJIwJAHQq1oWsDa2Vod20kUw=",
-      "server": "2606:4700:d0::58e5:d148:3f49:561d",
-      "server_port": 8319,
+      "private_key": "IKTvaznqEIorh4/dhodKajAbK8Ik2OwyQDzv0KImR1g=",
+      "server": "2606:4700:d0::6e8c:70de:688:8ecb",
+      "server_port": 1014,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "geo5",
+      "reserved": "xbD4",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -166,16 +167,16 @@
     },
     {
       "type": "wireguard",
-      "tag": "4-t.me/client_pro0 § 3",
+      "tag": "4-t.me\\client_pro0 § 3",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8580:36a9:fe65:2521:8a32/128"
+        "2606:4700:110:8602:aa0:6b86:5fa0:2b89/128"
       ],
-      "private_key": "uMgSPUiEDffvMC4tY32TbM6mqv4K1DGimomzgSrea3I=",
-      "server": "2606:4700:d0::2380:58ce:c55d:fc13",
-      "server_port": 1070,
+      "private_key": "6Ip7edKvl3EaAP+msuKQE6Yg6RlQUqxJFINoqDygV2o=",
+      "server": "2606:4700:d1::8b75:5414:dc3b:b172",
+      "server_port": 1387,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "zZDs",
+      "reserved": "8l8F",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -183,16 +184,16 @@
     },
     {
       "type": "wireguard",
-      "tag": "5-t.me/client_pro0 § 4",
+      "tag": "5-t.me\\client_pro0 § 4",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:89b1:40e8:59da:40b5:7abd/128"
+        "2606:4700:110:855b:3e:ce60:2728:333/128"
       ],
-      "private_key": "SDxzsxEH2HdNmZskUG+EWzQM8Gp1C2buhiBAO+5DEUU=",
-      "server": "2606:4700:d0::53a8:6203:9739:4246",
-      "server_port": 859,
+      "private_key": "8PgKJ/qEfdptriVQNnmZAIDV7+0RZx7V0qRCI1pRrlI=",
+      "server": "2606:4700:d1::ada3:8e8:e6bd:9232",
+      "server_port": 4177,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "yxTf",
+      "reserved": "0uhI",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -200,16 +201,16 @@
     },
     {
       "type": "wireguard",
-      "tag": "6-t.me/client_pro0 § 5",
+      "tag": "6-t.me\\client_pro0 § 5",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:883a:dc:6f:5659:727/128"
+        "2606:4700:110:8593:be4b:fe85:1574:2ef0/128"
       ],
-      "private_key": "KG2HYjvtAxkDIKPOcb0y3BNnmq9uiibpbrOErjOsUmE=",
-      "server": "2606:4700:d0::b37d:c2e5:423:4eab",
-      "server_port": 8319,
+      "private_key": "mHkGOYNi1R/Ap9rh+AJbVzzNhdwn0ylT8rO3VingrUE=",
+      "server": "2606:4700:d1::fb4d:359a:7073:61f3",
+      "server_port": 3138,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "hUk/",
+      "reserved": "fvzH",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -265,10 +266,6 @@
       {
         "clash_mode": "Global",
         "outbound": "select"
-      },
-      {
-        "geoip": "private",
-        "outbound": "bypass"
       }
     ],
     "rule_set": [
@@ -298,7 +295,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "hhdc9fC6vJmAao-E"
+      "secret": "6dit4IaHfeIYgEJe"
     }
   }
 }
