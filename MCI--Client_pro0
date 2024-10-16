@@ -42,14 +42,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3123::",
         "2a06:98c1:3122::",
-        "188.114.98.0",
+        "2a06:98c1:3123::",
         "188.114.99.0",
-        "104.17.147.22",
+        "188.114.98.0",
         "104.17.148.22",
-        "2a06:98c1:3120::6",
+        "104.17.147.22",
         "2a06:98c1:3121::6",
+        "2a06:98c1:3120::6",
         "188.114.97.3",
         "188.114.96.3"
       ]
@@ -95,8 +95,7 @@
         "3-t.me/client_pro0 § 2",
         "4-t.me/client_pro0 § 3",
         "5-t.me/client_pro0 § 4",
-        "6-t.me/client_pro0 § 5",
-        "7-t.me/client_pro0 § 6"
+        "6-t.me/client_pro0 § 5"
       ],
       "default": "auto"
     },
@@ -109,8 +108,7 @@
         "3-t.me/client_pro0 § 2",
         "4-t.me/client_pro0 § 3",
         "5-t.me/client_pro0 § 4",
-        "6-t.me/client_pro0 § 5",
-        "7-t.me/client_pro0 § 6"
+        "6-t.me/client_pro0 § 5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -118,16 +116,32 @@
     },
     {
       "type": "wireguard",
-      "tag": "1-t.me/client_pro0 § 0",
+      "tag": "Hiddify Warp ✅",
+      "detour": "direct",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8465:c9be:9a8c:1e31:c3f4/128"
+        "2606:4700:110:808c:4aa:b13e:ee5f:8abe/128"
       ],
-      "private_key": "6ONjARsL4ngzGIQ76fTBxM/2T6rKm/tvPjIyfN03jUg=",
-      "server": "2606:4700:d0::1054:2f6b:54b1:787a",
-      "server_port": 854,
+      "private_key": "yEqQgQhVDu8Byh+Ipegf9WzlgUITSaavZeUrJrxEY2E=",
+      "server": "162.159.192.181",
+      "server_port": 7152,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "+o/2",
+      "reserved": "Ii3m",
+      "mtu": 1280
+    },
+    {
+      "type": "wireguard",
+      "tag": "1-t.me/client_pro0 § 0",
+      "detour": "Hiddify Warp ✅",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:80dc:946e:9a6:7a02:5e22/128"
+      ],
+      "private_key": "UGmLR6+f4zvyqyXFnr5AKji13KCrEIz4WFD3IJlPEW0=",
+      "server": "2606:4700:d0::dec8:d129:23c0:254",
+      "server_port": 864,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "tWGN",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -136,15 +150,16 @@
     {
       "type": "wireguard",
       "tag": "2-t.me/client_pro0 § 1",
+      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:82d5:fd09:294a:ef4a:e7cc/128"
+        "2606:4700:110:8b0f:32ba:ab89:4e91:f2ec/128"
       ],
-      "private_key": "kBL3A/kLidLqCUDsPTa47BCWH6IODleMVq3Jl6iWIlY=",
-      "server": "2606:4700:d0::c4ef:a2c8:5251:7ee",
-      "server_port": 7152,
+      "private_key": "AGo/P7SLik9moLCDzd5C8M+e6X7jpa/mt43Nl22ooE4=",
+      "server": "2606:4700:d0::6a26:536b:cf8f:145",
+      "server_port": 1180,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "CqSw",
+      "reserved": "xqQn",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -153,15 +168,16 @@
     {
       "type": "wireguard",
       "tag": "3-t.me/client_pro0 § 2",
+      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8739:91c8:bef2:630a:b6f5/128"
+        "2606:4700:110:83af:84c5:a6e8:cdc9:f03/128"
       ],
-      "private_key": "YPiM2VJ4Xf6Uk9SpLxOaifRDx+7fvx29LA/5owUmIFc=",
-      "server": "2606:4700:d0::2345:4683:4ef2:1ec3",
-      "server_port": 500,
+      "private_key": "OH2nOIL5Ziaf4gpg26clLFPuDPwtIVBVYdg1PAuu6WY=",
+      "server": "2606:4700:d0::b2d:b502:3f67:87f3",
+      "server_port": 854,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "t/xU",
+      "reserved": "r9fh",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -170,15 +186,16 @@
     {
       "type": "wireguard",
       "tag": "4-t.me/client_pro0 § 3",
+      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:80d9:f9d:96da:efb:2e71/128"
+        "2606:4700:110:8737:73fb:3e60:cf07:ea6d/128"
       ],
-      "private_key": "gPIgXkiYilG1LOkzhb4065eBfjdObPCCYXR+K4igd0s=",
-      "server": "2606:4700:d0::c803:9584:bc08:345d",
-      "server_port": 945,
+      "private_key": "CMYfOjvAS7EZVCi60unjmUph7Sd4ff6kPRE+2hEePHY=",
+      "server": "2606:4700:d0::5a16:7086:2ba8:d739",
+      "server_port": 1387,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "d4n0",
+      "reserved": "tnBI",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -187,15 +204,16 @@
     {
       "type": "wireguard",
       "tag": "5-t.me/client_pro0 § 4",
+      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8f58:7a77:8e0c:62cf:fbb0/128"
+        "2606:4700:110:8364:c803:b0be:33c:ac26/128"
       ],
-      "private_key": "qKIDth67d4xdxQGCK8+3T+Elksz9qkau9YbuDhKDT0w=",
-      "server": "2606:4700:d0::de8d:6294:8c63:d607",
-      "server_port": 1070,
+      "private_key": "QBr+mFZgZPtsu7d6kEDVuFWHbV/JCCScNV0dZrpViU8=",
+      "server": "2606:4700:d0::be3a:2296:dac5:5b4f",
+      "server_port": 4177,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "3TDq",
+      "reserved": "5umY",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -204,32 +222,16 @@
     {
       "type": "wireguard",
       "tag": "6-t.me/client_pro0 § 5",
+      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8de4:2de:49cf:cefd:1441/128"
+        "2606:4700:110:87bc:b816:dafd:9dc8:f39a/128"
       ],
-      "private_key": "UN9tP5YfXS5r8l46oDlHdC7zjPou+mQ9GJewhcKdHGo=",
-      "server": "2606:4700:d0::1689:9193:3c19:dc53",
-      "server_port": 8854,
+      "private_key": "MMfX7lY4j9K04q2G4Yvw4jVTNTl+SCiBFYp4AMbrHGE=",
+      "server": "2606:4700:d0::5187:7447:f197:1e32",
+      "server_port": 1010,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "0MTP",
-      "mtu": 1330,
-      "fake_packets": "1-5",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
-    },
-    {
-      "type": "wireguard",
-      "tag": "7-t.me/client_pro0 § 6",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:8132:1f92:4fda:1f35:4021/128"
-      ],
-      "private_key": "wG6FLlFtNJVmp8J764abw/B009DSK+Oc+vguRzIU2Wc=",
-      "server": "2606:4700:d0::a131:6bab:61ab:dcf",
-      "server_port": 1018,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "sxK3",
+      "reserved": "ZbPU",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -264,13 +266,6 @@
   "route": {
     "rules": [
       {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "outbound": "direct"
-      },
-      {
         "inbound": "dns-in",
         "outbound": "dns-out"
       },
@@ -287,22 +282,6 @@
         "outbound": "select"
       }
     ],
-    "rule_set": [
-      {
-        "type": "remote",
-        "tag": "geoip-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
-        "update_interval": "120h0m0s"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
-        "update_interval": "120h0m0s"
-      }
-    ],
     "final": "select",
     "auto_detect_interface": true,
     "override_android_vpn": true
@@ -314,7 +293,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "aNm5O_oZj5VPQomE"
+      "secret": "VEyxYc3SUGgWo6ZE"
     }
   }
 }
