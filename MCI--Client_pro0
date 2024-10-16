@@ -48,10 +48,10 @@
         "188.114.98.0",
         "104.17.148.22",
         "104.17.147.22",
-        "2a06:98c1:3121::6",
-        "2a06:98c1:3120::6",
-        "188.114.97.3",
-        "188.114.96.3"
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
+        "188.114.96.3",
+        "188.114.97.3"
       ]
     },
     "independent_cache": true
@@ -62,6 +62,7 @@
       "tag": "tun-in",
       "mtu": 9000,
       "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true,
@@ -116,30 +117,14 @@
     },
     {
       "type": "wireguard",
-      "tag": "Hiddify Warp ✅",
-      "detour": "direct",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:808c:4aa:b13e:ee5f:8abe/128"
-      ],
-      "private_key": "yEqQgQhVDu8Byh+Ipegf9WzlgUITSaavZeUrJrxEY2E=",
-      "server": "162.159.192.181",
-      "server_port": 7152,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Ii3m",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
       "tag": "1-t.me/client_pro0 § 0",
-      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:80dc:946e:9a6:7a02:5e22/128"
       ],
       "private_key": "UGmLR6+f4zvyqyXFnr5AKji13KCrEIz4WFD3IJlPEW0=",
       "server": "2606:4700:d0::dec8:d129:23c0:254",
-      "server_port": 864,
+      "server_port": 1843,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "tWGN",
       "mtu": 1330,
@@ -150,14 +135,13 @@
     {
       "type": "wireguard",
       "tag": "2-t.me/client_pro0 § 1",
-      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8b0f:32ba:ab89:4e91:f2ec/128"
       ],
       "private_key": "AGo/P7SLik9moLCDzd5C8M+e6X7jpa/mt43Nl22ooE4=",
       "server": "2606:4700:d0::6a26:536b:cf8f:145",
-      "server_port": 1180,
+      "server_port": 854,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "xqQn",
       "mtu": 1330,
@@ -168,14 +152,13 @@
     {
       "type": "wireguard",
       "tag": "3-t.me/client_pro0 § 2",
-      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:83af:84c5:a6e8:cdc9:f03/128"
       ],
       "private_key": "OH2nOIL5Ziaf4gpg26clLFPuDPwtIVBVYdg1PAuu6WY=",
       "server": "2606:4700:d0::b2d:b502:3f67:87f3",
-      "server_port": 854,
+      "server_port": 928,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "r9fh",
       "mtu": 1330,
@@ -186,14 +169,13 @@
     {
       "type": "wireguard",
       "tag": "4-t.me/client_pro0 § 3",
-      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8737:73fb:3e60:cf07:ea6d/128"
       ],
       "private_key": "CMYfOjvAS7EZVCi60unjmUph7Sd4ff6kPRE+2hEePHY=",
       "server": "2606:4700:d0::5a16:7086:2ba8:d739",
-      "server_port": 1387,
+      "server_port": 1843,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "tnBI",
       "mtu": 1330,
@@ -204,14 +186,13 @@
     {
       "type": "wireguard",
       "tag": "5-t.me/client_pro0 § 4",
-      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8364:c803:b0be:33c:ac26/128"
       ],
       "private_key": "QBr+mFZgZPtsu7d6kEDVuFWHbV/JCCScNV0dZrpViU8=",
       "server": "2606:4700:d0::be3a:2296:dac5:5b4f",
-      "server_port": 4177,
+      "server_port": 908,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "5umY",
       "mtu": 1330,
@@ -222,14 +203,13 @@
     {
       "type": "wireguard",
       "tag": "6-t.me/client_pro0 § 5",
-      "detour": "Hiddify Warp ✅",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:87bc:b816:dafd:9dc8:f39a/128"
       ],
       "private_key": "MMfX7lY4j9K04q2G4Yvw4jVTNTl+SCiBFYp4AMbrHGE=",
       "server": "2606:4700:d0::5187:7447:f197:1e32",
-      "server_port": 1010,
+      "server_port": 1387,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "ZbPU",
       "mtu": 1330,
@@ -293,7 +273,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "VEyxYc3SUGgWo6ZE"
+      "secret": "3U3SXJSDveR0vkIb"
     }
   }
 }
