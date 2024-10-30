@@ -42,16 +42,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3120::6",
-        "2a06:98c1:3121::6",
-        "188.114.98.0",
-        "188.114.99.0",
-        "104.17.148.22",
-        "104.17.147.22",
-        "2a06:98c1:3120::6",
-        "2a06:98c1:3121::6",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "188.114.96.3",
-        "188.114.97.3"
+        "188.114.97.3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
+        "188.114.97.3",
+        "188.114.96.3"
       ]
     },
     "independent_cache": true
@@ -63,8 +63,9 @@
       "mtu": 9000,
       "inet4_address": "172.19.0.1/28",
       "auto_route": true,
+      "strict_route": true,
       "endpoint_independent_nat": true,
-      "stack": "system",
+      "stack": "mixed",
       "sniff": true,
       "sniff_override_destination": true
     },
@@ -118,13 +119,13 @@
       "tag": "1-t.me/client_pro0 § 0",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8b9b:5514:df1a:269:bb2e/128"
+        "2606:4700:110:8695:1f5c:eb80:f22d:5e5d/128"
       ],
-      "private_key": "yB2EeCYUVa9OjRBa9viXZcSsNSP/WXV8Efk41e1t93I=",
-      "server": "2606:4700:d1::6f2a:f0c3:d55f:7425",
-      "server_port": 8854,
+      "private_key": "AEz7BO7wAf8QYg/VKif/46Qxgg5BNqeV1ELSbFoQDFo=",
+      "server": "2606:4700:d1::f024:5785:2e5d:67ca",
+      "server_port": 5279,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "zij9",
+      "reserved": "dLqH",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -135,13 +136,13 @@
       "tag": "2-t.me/client_pro0 § 1",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:81eb:2d62:ac92:3949:83cd/128"
+        "2606:4700:110:87fa:902:87d7:9320:9765/128"
       ],
-      "private_key": "4BOUKlmImJLBZnuzGs39Yb4D7p0EwPYuuEHeH8tfCXA=",
-      "server": "2606:4700:d0::1609:9ac7:c521:239e",
-      "server_port": 945,
+      "private_key": "SNwXuyVAeRwbo0n1xSSfJlj4ojm8uekXXAD0/WMmM0E=",
+      "server": "2606:4700:d0::2bea:8ab5:eced:14b",
+      "server_port": 5279,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "IIgQ",
+      "reserved": "v8PJ",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -152,13 +153,13 @@
       "tag": "3-t.me/client_pro0 § 2",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8474:37f8:7d77:965b:ced0/128"
+        "2606:4700:110:8328:2037:bb0b:a75a:d8ec/128"
       ],
-      "private_key": "4BdtWlFkLgvdsyBjdY1Qg5DAGcvmtFVRucc+kpsmEGU=",
-      "server": "2606:4700:d1::231e:866b:5ee6:d777",
-      "server_port": 891,
+      "private_key": "+LedFDN1mUb6cDDExfcP7GiYtP5dTOjtbTDIn8w1YGU=",
+      "server": "2606:4700:d0::3386:bde1:d39a:dfe0",
+      "server_port": 1180,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "CLVL",
+      "reserved": "+4Q7",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -169,13 +170,13 @@
       "tag": "4-t.me/client_pro0 § 3",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8511:a19:92aa:9006:a02e/128"
+        "2606:4700:110:8426:f57c:bb49:9966:4798/128"
       ],
-      "private_key": "4G4JYYpgPoY9aGVyY9gHlb9wBEHQ3stTJKLItrDQr0k=",
-      "server": "2606:4700:d1::1a72:7d67:8bc7:d92b",
-      "server_port": 3138,
+      "private_key": "iNXYYGXA/IwTLPz9ZW0MKqQiZ+hgO6WH0Lj204lrdnc=",
+      "server": "2606:4700:d0::7002:aa12:1024:98ac",
+      "server_port": 2371,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "8RHy",
+      "reserved": "8R08",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -186,13 +187,13 @@
       "tag": "5-t.me/client_pro0 § 4",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8136:78f5:390f:3069:9156/128"
+        "2606:4700:110:8f48:8211:d390:935f:f8f4/128"
       ],
-      "private_key": "cPrHLLeg0f+KL+QqQA5KE0LMxFkz6gLOh1HiAT8b8Hs=",
-      "server": "2606:4700:d1::b864:c718:be2a:bf77",
-      "server_port": 864,
+      "private_key": "SBtoRFtlTSZvBZQEjfxdtHWy3cx+1k+pOXoz7TormUs=",
+      "server": "2606:4700:d0::1e43:425:96df:52da",
+      "server_port": 7152,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "+0cv",
+      "reserved": "ybe8",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -203,13 +204,13 @@
       "tag": "6-t.me/client_pro0 § 5",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8ede:c707:6cb2:5080:246b/128"
+        "2606:4700:110:882c:c5b8:ef84:27d5:734f/128"
       ],
-      "private_key": "qMDCWX+La7ThcnqjZTkH5afz4tELXOpEeJzNhuRAC2k=",
-      "server": "2606:4700:d1::b32d:8daa:e5a4:47a0",
-      "server_port": 894,
+      "private_key": "qM7JRIWGE66F3QBGKuWfhxC8b1ljb1EMn6PU5WX0P1c=",
+      "server": "2606:4700:d0::370a:55ce:fc3a:73ed",
+      "server_port": 864,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "jPNS",
+      "reserved": "9LQ6",
       "mtu": 1330,
       "fake_packets": "1-5",
       "fake_packets_size": "40-100",
@@ -244,6 +245,13 @@
   "route": {
     "rules": [
       {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
         "inbound": "dns-in",
         "outbound": "dns-out"
       },
@@ -260,6 +268,22 @@
         "outbound": "select"
       }
     ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
     "final": "select",
     "auto_detect_interface": true,
     "override_android_vpn": true
@@ -271,7 +295,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "1PammCv8ssa19qva"
+      "secret": "TsemcMwbe5RL9Pif"
     }
   }
 }
